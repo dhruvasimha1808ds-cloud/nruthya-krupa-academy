@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+
+# Uploaded files and local database
+backend/uploads/
+backend/db/*.db
+backend/db/*.db-shm
+backend/db/*.db-wal
+
+# Logs
+*.log
+
+# Operating system
+.DS_Store
+Thumbs.db

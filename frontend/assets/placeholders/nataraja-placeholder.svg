@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+<defs>
+<radialGradient id="g1" cx="50%" cy="35%" r="70%">
+<stop offset="0%" stop-color="#3a2b1a"/>
+<stop offset="100%" stop-color="#120c08"/>
+</radialGradient>
+</defs>
+<rect width="1600" height="1200" fill="url(#g1)"/>
+<circle cx="800" cy="480" r="330" fill="none" stroke="#C79A3E" stroke-width="6" opacity="0.55"/>
+<g stroke="#C79A3E" stroke-width="5" fill="none" opacity="0.75">
+<path d="M800 260 L800 700 M650 340 L950 340 M650 620 L950 620 M700 300 Q800 380 900 300 M700 640 Q800 560 900 640"/>
+<circle cx="800" cy="470" r="90" />
+</g>
+<text x="800" y="1120" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#C79A3E" opacity="0.8">Nataraja portrait placeholder — replace in Admin &gt; Site Settings</text>
+</svg>
