@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const API = '/api';
+  const API = "https://nruthya-krupa-academy.onrender.com/api";
   const $ = (sel, ctx) => (ctx || document).querySelector(sel);
   const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
   const escapeHtml = (str) => (str || '').toString().replace(/[&<>"']/g, (c) => ({

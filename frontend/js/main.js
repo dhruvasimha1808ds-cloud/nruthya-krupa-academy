@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const API = '/api';
+  const API = 'https://nruthya-krupa-academy.onrender.com/api';
   const $ = (sel, ctx) => (ctx || document).querySelector(sel);
   const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
 
@@ -97,18 +97,16 @@
     ['nav-logo', 'footer-logo'].forEach(id => {
       const el = $('#' + id);
       if (!el) return;
-      if (s.site_logo) { el.src = s.site_logo; el.classList.add('has-logo'); }
+      if (s.site_logo) if (s.site_logo) { el.src = s.site_logo.startsWith('http') ? s.site_logo : 'https://nruthya-krupa-academy.onrender.com/' + s.site_logo.replace(/^\/+/, ''); el.classList.add('has-logo'); }
       else { el.classList.remove('has-logo'); }
     });
 
-    if (s.hero_image) {
-      $('.hero').style.setProperty('--hero-image', `url('${s.hero_image}')`);
-      $('.hero').style.backgroundImage = `url('${s.hero_image}')`;
+    if $('.hero').style.backgroundImage = `url('${s.hero_image.startsWith('http') ? s.hero_image : 'https://nruthya-krupa-academy.onrender.com/' + s.hero_image.replace(/^\/+/, '')}')`;
     }
     if (s.background_color) {
       document.body.style.setProperty('--site-bg-color', s.background_color);
     }
-    document.body.style.setProperty('--site-bg-image', s.site_background ? `url('${s.site_background}')` : 'none');
+    document.body.style.setProperty('--site-bg-image', s.site_background ? `url('${s.site_background.startsWith('http') ? s.site_background : 'https://nruthya-krupa-academy.onrender.com/' + s.site_background.replace(/^\/+/, '')}')` : 'none');
     if (s.map_lat && s.map_lng) {
       const lat = parseFloat(s.map_lat), lng = parseFloat(s.map_lng);
       const d = 0.01;
@@ -231,8 +229,8 @@
     wrap.innerHTML = items.length ? items.map(item => `
       <div class="masonry-item" data-full="${item.file_path}" data-caption="${escapeHtml(item.caption || item.title || '')}" data-type="${item.media_type}">
         ${item.media_type === 'video'
-          ? `<video src="${item.file_path}" muted playsinline></video><span class="video-badge">Video</span>`
-          : `<img src="${item.file_path}" alt="${escapeHtml(item.title || '')}" loading="lazy">`}
+          ? `<video src="${item.file_path && item.file_path.startsWith('http') ? item.file_path : 'https://nruthya-krupa-academy.onrender.com/' + (item.file_path || '').replace(/^\/+/, '')}" muted playsinline></video>`
+          : `<img src="${item.file_path && item.file_path.startsWith('http') ? item.file_path : 'https://nruthya-krupa-academy.onrender.com/' + (item.file_path || '').replace(/^\/+/, '')}" alt="${escapeHtml(item.title || '')}" loading="lazy">
         ${(item.title || item.caption) ? `<div class="masonry-caption">${escapeHtml(item.title || '')}${item.title && item.caption ? ' — ' : ''}${escapeHtml(item.caption || '')}</div>` : ''}
       </div>
     `).join('') : '<p class="empty-note">Nothing uploaded to this category yet.</p>';
