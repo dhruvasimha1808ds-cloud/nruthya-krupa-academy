@@ -37,10 +37,13 @@ if (CLOUDINARY_CONFIGURED) {
 }
 
 // ── Routes ─────────────────────────────────────────────────────
+
+app.use('/api/auth', require('./routes/auth'));
 app.use('/api/settings', require('./routes/settings'));
 app.use('/api/gallery', require('./routes/gallery'));
 app.use('/api/performance', require('./routes/performance'));
 app.use('/api/contact', require('./routes/contact'));
+
 
 // Mount any additional routes that exist
 const optionalRoutes = [
