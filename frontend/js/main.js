@@ -151,8 +151,8 @@
     setText('guru-name-en', 'guru_name_en');
     setText('guru-name-kn', 'guru_name_kn');
     setText('footer-guru-name', 'guru_name_en');
-    setText('kseab-junior-count', 'kseab_junior_count');
-    setText('kseab-senior-count', 'kseab_senior_count');
+    setText('kseeb-junior-count', 'kseeb_junior_count');
+    setText('kseeb-senior-count', 'kseeb_senior_count');
     setText('seva-text', 'seva_text');
     setText('gratitude-text', 'gratitude_text');
     setText('scholarship-title', 'scholarship_title');
